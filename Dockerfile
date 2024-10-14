@@ -1,4 +1,4 @@
 FROM openjdk:latest
-COPY ./target/classes/com /tmp/com
+COPY ./target/SET09804-G4-0.1.0.0-jar-with-dependencies.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "com.napier.devops.App"]
+ENTRYPOINT ["java", "-jar", "SET09804-G4-0.1.0.0-jar-with-dependencies.jar"]

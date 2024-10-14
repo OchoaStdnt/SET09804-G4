@@ -9,6 +9,4 @@ Kenneth Ramirez
 
 Donisio Rash
 
-Herbert Stuart
-
 Bernard Daniel Young
