@@ -1,9 +1,9 @@
-name: Workflow for SET09804-G4
+name: Workflow for SET09803-G4
 on: push
 
 jobs:
   build:
-    name: SET09804-G4 action
+    name: SET09803-G4 action
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
