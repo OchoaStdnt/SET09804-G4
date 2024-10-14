@@ -1,4 +1,4 @@
-# This the repository for SET09803 DevOps
+# This is the repository for SET09803 DevOps
 
 ## Group Members:
 John Chimezie
