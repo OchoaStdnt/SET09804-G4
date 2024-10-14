@@ -1,4 +1,4 @@
-# This is the repository for SET09803 DevOps
+# This is the repository for SET09803-G4 DevOps
 
 ![workflow](https://github.com/OchoaStdnt/SET09804-G4/actions/workflows/main.yml/badge.svg)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/OchoaStdnt/SET09804-G4/main.yml?branch=master&label=Master%20Build)
