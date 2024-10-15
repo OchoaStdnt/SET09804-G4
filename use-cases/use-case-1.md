@@ -1,59 +1,52 @@
-# USE CASE: <number> <the name should be the goal as a short active verb phrase>
+# USE CASE: 1 Produce a report on all the countries in the World by larges population
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-*a longer statement of the goal, if needed*
+*As a analyst, I want to view all the countries in the world organized by largest population to smallest, so that I can analyze global population trends.*
 
 ### Scope
 
-*what system is considered black-box under design*
+*Company*
 
 ### Level
 
-*one of: Summary, Primary task, subfunction*
+*Primary Task*
 
 ### Preconditions
 
-*what we expect is already the state of the world*
+*Database contains World information*
 
 ### Success End Condition
 
-*the state of the world upon successful completion*
+*A report is available from the World Database*
 
 ### Failed End Condition
 
-*the state of the world if goal abandoned*
+*No report is produced*
 
 ### Primary Actor
 
-*a role name for the primary actor, or description*
+*User running the report*
 
 ### Trigger
 
-*the action upon the system that starts the use case, may be a time event*
+*A request by an actor.*
 
 ## MAIN SUCCESS SCENARIO
 
-*put here the steps of the scenario from trigger to goal delivery, and any cleanup after*
-
-1. action description
+1. User requires information from the World Database.
+2. User extracts all countries in the world organized by largest population.
 
 ## EXTENSIONS
 
-*put here the extensions, one at a time, each referring to the step of the main scenario*
-
-1. **Condition**: action of sub use case
+*N/A*
 
 ## SUB-VARIATIONS
 
-*put here the sub-variations that will cause eventual branching in the scenario
-
-1. list of sub-variations
+*N/A*
 
 ## SCHEDULE
 
-**DUE DATE**: *date or release of deployment*
-
-*any other schedule/staffing information you need*
+**Oct 15, 2024**: *v0.1.0.1*
