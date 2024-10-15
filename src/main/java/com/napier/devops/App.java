@@ -92,8 +92,12 @@ public class App {
             // Create string for SQL statement
             String strSelect =
                     //SQL query
-                    "SELECT Name AS country_name, "
-                            + "Population "
+                    "SELECT Code, "
+                            + "Name AS country_name, "
+                            + "Continent, "
+                            + "Region, "
+                            + "Population, "
+                            + "Capital "
                             + "FROM country "
                             + "ORDER BY Population DESC";
             // Execute SQL statement
@@ -103,14 +107,18 @@ public class App {
             System.out.println("All Countries by Population:");
 
             // Header in SQL style
-            System.out.printf("%-50s %-15s%n", "Country Name", "Population");
-            System.out.println("-----------------------------------------------------------------");    //add - depending on the values of the spacing
+            System.out.printf("%-5s %-50s %-20s %-40s %-15s %-6s%n", "Code", "Country Name", "Continent", "Region", "Population", "Capital");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
 
             //Print data
             while (rset.next()) {
+                String countryCode = rset.getString("Code");
                 String countryName = rset.getString("country_name");
+                String conti = rset.getString("Continent");
+                String regn = rset.getString("Region");
                 int population = rset.getInt("Population");
-                System.out.printf("%-50s %-15d%n", countryName, population);
+                int countryCapital = rset.getInt("Capital");
+                System.out.printf("%-5s %-50s %-20s %-40s %-15d %-6d%n", countryCode, countryName, conti, regn, population, countryCapital);
             }
 
         }
