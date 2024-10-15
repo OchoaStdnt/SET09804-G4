@@ -11,7 +11,7 @@ public class App {
         a.connect();
 
         // Call Method (Report)
-        a.allCountriesByPop();
+        a.topPopCitiesByRegion();
 
         // Disconnect from database
         a.disconnect();
@@ -83,7 +83,7 @@ public class App {
     Reports
      */
     //-----------------------------------------------------------------------------------
-    public void allCountriesByPop()
+    public void topPopCitiesByRegion()
     {
         try
         {
@@ -92,25 +92,28 @@ public class App {
             // Create string for SQL statement
             String strSelect =
                     //SQL query
-                    "SELECT Name AS country_name, "
-                            + "Population "
-                            + "FROM country "
-                            + "ORDER BY Population DESC";
+                    "SELECT ci.Name AS city_name, "
+                            + "ci.Population "
+                            + "FROM city ci "
+                            + "JOIN country c ON ci.CountryCode = c.Code "
+                            + "WHERE c.Name = 'United States' "   //United States can be changed to another Country
+                            + "ORDER BY ci.Population DESC "
+                            + "LIMIT 5";    //limit display
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
             //Report Name
-            System.out.println("All Countries by Population:");
+            System.out.println("Top Populated Cities by Region:");
 
             // Header in SQL style
-            System.out.printf("%-50s %-15s%n", "Country Name", "Population");
+            System.out.printf("%-50s %-15s%n", "City Name", "Population");
             System.out.println("-----------------------------------------------------------------");    //add - depending on the values of the spacing
 
             //Print data
             while (rset.next()) {
-                String countryName = rset.getString("country_name");
-                int population = rset.getInt("Population");
-                System.out.printf("%-50s %-15d%n", countryName, population);
+                String cityName = rset.getString("city_name");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-15d%n", cityName, population);
             }
 
         }
