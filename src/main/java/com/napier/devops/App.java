@@ -11,7 +11,7 @@ public class App {
         a.connect();
 
         // Call Method (Report)
-        a.allCountriesByPop();
+        a.countriesByContinent();
 
         // Disconnect from database
         a.disconnect();
@@ -83,7 +83,7 @@ public class App {
     Reports
      */
     //-----------------------------------------------------------------------------------
-    public void allCountriesByPop()
+    public void countriesByContinent()
     {
         try
         {
@@ -95,12 +95,13 @@ public class App {
                     "SELECT Name AS country_name, "
                             + "Population "
                             + "FROM country "
+                            + "WHERE Continent = 'Asia' "   //Asia can be changed to another Continent
                             + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
             //Report Name
-            System.out.println("All Countries by Population:");
+            System.out.println("All Countries by Continent:");
 
             // Header in SQL style
             System.out.printf("%-50s %-15s%n", "Country Name", "Population");
