@@ -1,5 +1,5 @@
 package com.napier.devops;
-
+// Use case 1
 import java.sql.*;
 
 public class App {
@@ -11,7 +11,7 @@ public class App {
         a.connect();
 
         // Call Method (Report)
-        a.topPopCitiesByRegion();
+        a.allCountriesByPop();
 
         // Disconnect from database
         a.disconnect();
@@ -83,7 +83,7 @@ public class App {
     Reports
      */
     //-----------------------------------------------------------------------------------
-    public void topPopCitiesByRegion()
+    public void allCountriesByPop()
     {
         try
         {
@@ -92,28 +92,33 @@ public class App {
             // Create string for SQL statement
             String strSelect =
                     //SQL query
-                    "SELECT ci.Name AS city_name, "
-                            + "ci.Population "
-                            + "FROM city ci "
-                            + "JOIN country c ON ci.CountryCode = c.Code "
-                            + "WHERE c.Name = 'United States' "   //United States can be changed to another Country
-                            + "ORDER BY ci.Population DESC "
-                            + "LIMIT 5";    //limit display
+                    "SELECT Code, "
+                            + "Name AS country_name, "
+                            + "Continent, "
+                            + "Region, "
+                            + "Population, "
+                            + "Capital "
+                            + "FROM country "
+                            + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
             //Report Name
-            System.out.println("Top Populated Cities by Region:");
+            System.out.println("All Countries by Population:");
 
             // Header in SQL style
-            System.out.printf("%-50s %-15s%n", "City Name", "Population");
-            System.out.println("-----------------------------------------------------------------");    //add - depending on the values of the spacing
+            System.out.printf("%-5s %-50s %-20s %-40s %-15s %-6s%n", "Code", "Country Name", "Continent", "Region", "Population", "Capital");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
 
             //Print data
             while (rset.next()) {
-                String cityName = rset.getString("city_name");
-                int population = rset.getInt("ci.Population");
-                System.out.printf("%-50s %-15d%n", cityName, population);
+                String countryCode = rset.getString("Code");
+                String countryName = rset.getString("country_name");
+                String conti = rset.getString("Continent");
+                String regn = rset.getString("Region");
+                int population = rset.getInt("Population");
+                int countryCapital = rset.getInt("Capital");
+                System.out.printf("%-5s %-50s %-20s %-40s %-15d %-6d%n", countryCode, countryName, conti, regn, population, countryCapital);
             }
 
         }
