@@ -11,7 +11,7 @@ public class App {
         a.connect();
 
         // Call Method (Report)
-        a.showWorldDBTables();
+        a.allCountriesByPop();
 
         // Disconnect from database
         a.disconnect();
@@ -83,7 +83,7 @@ public class App {
     Reports
      */
     //-----------------------------------------------------------------------------------
-    public void showWorldDBTables()
+    public void allCountriesByPop()
     {
         try
         {
@@ -92,12 +92,25 @@ public class App {
             // Create string for SQL statement
             String strSelect =
                     //SQL query
-                    "SHOW TABLES";
+                    "SELECT Name AS country_name, "
+                            + "Population "
+                            + "FROM country "
+                            + "ORDER BY Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            System.out.println("Tables for World DB:");
+
+            //Report Name
+            System.out.println("All Countries by Population:");
+
+            // Header in SQL style
+            System.out.printf("%-50s %-15s%n", "Country Name", "Population");
+            System.out.println("-----------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
             while (rset.next()) {
-                System.out.println(rset.getString(1));
+                String countryName = rset.getString("country_name");
+                int population = rset.getInt("Population");
+                System.out.printf("%-50s %-15d%n", countryName, population);
             }
 
         }
@@ -106,5 +119,4 @@ public class App {
         }
     }
 }
-
 
