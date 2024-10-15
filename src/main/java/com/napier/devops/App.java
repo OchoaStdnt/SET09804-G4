@@ -98,7 +98,7 @@ public class App {
                             + "JOIN country c ON ci.CountryCode = c.Code "
                             + "WHERE c.Name = 'United States' "   //United States can be changed to another Country
                             + "ORDER BY ci.Population DESC "
-                            + "LIMIT 5";    //limit display
+                            + "LIMIT 6";    //limit display
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
