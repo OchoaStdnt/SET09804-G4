@@ -11,7 +11,7 @@ public class App {
         a.connect();
 
         // Call Method (Report)
-        a.allCountriesByPop();
+        a.topPopCapitalCitiesByContinent();
 
         // Disconnect from database
         a.disconnect();
@@ -83,7 +83,7 @@ public class App {
     Reports
      */
     //-----------------------------------------------------------------------------------
-    public void allCountriesByPop()
+    public void topPopCapitalCitiesByContinent()
     {
         try
         {
@@ -92,25 +92,28 @@ public class App {
             // Create string for SQL statement
             String strSelect =
                     //SQL query
-                    "SELECT Name AS country_name, "
-                            + "Population "
-                            + "FROM country "
-                            + "ORDER BY Population DESC";
+                    "SELECT ci.Name AS capital_city, "
+                            + "ci.Population "
+                            + "FROM country c "
+                            + "JOIN city ci ON c.Capital = ci.ID "
+                            + "WHERE c.Continent = 'Asia' "   //Asia can be changed to another Continent
+                            + "ORDER BY ci.Population DESC "
+                            + "LIMIT 5";    //limit N display
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
             //Report Name
-            System.out.println("All Countries by Population:");
+            System.out.println("Top Populated Capital Cities by Continent:");
 
             // Header in SQL style
-            System.out.printf("%-50s %-15s%n", "Country Name", "Population");
+            System.out.printf("%-50s %-15s%n", "Capital City Name", "Population");
             System.out.println("-----------------------------------------------------------------");    //add - depending on the values of the spacing
 
             //Print data
             while (rset.next()) {
-                String countryName = rset.getString("country_name");
-                int population = rset.getInt("Population");
-                System.out.printf("%-50s %-15d%n", countryName, population);
+                String CapitalCityName = rset.getString("capital_city");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-15d%n", CapitalCityName, population);
             }
 
         }
