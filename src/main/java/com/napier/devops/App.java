@@ -11,7 +11,7 @@ public class App {
         a.connect();
 
         // Call Method (Report)
-        a.topPopCapitalCitiesByContinent();
+        a.topPopCitiesByRegion();
 
         // Disconnect from database
         a.disconnect();
@@ -83,7 +83,7 @@ public class App {
     Reports
      */
     //-----------------------------------------------------------------------------------
-    public void topPopCapitalCitiesByContinent()
+    public void topPopCitiesByRegion()
     {
         try
         {
@@ -92,28 +92,28 @@ public class App {
             // Create string for SQL statement
             String strSelect =
                     //SQL query
-                    "SELECT ci.Name AS capital_city, "
+                    "SELECT ci.Name AS city_name, "
                             + "ci.Population "
-                            + "FROM country c "
-                            + "JOIN city ci ON c.Capital = ci.ID "
-                            + "WHERE c.Continent = 'Asia' "   //Asia can be changed to another Continent
+                            + "FROM city ci "
+                            + "JOIN country c ON ci.CountryCode = c.Code "
+                            + "WHERE c.Name = 'United States' "   //United States can be changed to another Country
                             + "ORDER BY ci.Population DESC "
-                            + "LIMIT 5";    //limit N display
+                            + "LIMIT 5";    //limit display
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
             //Report Name
-            System.out.println("Top Populated Capital Cities by Continent:");
+            System.out.println("Top Populated Cities by Region:");
 
             // Header in SQL style
-            System.out.printf("%-50s %-15s%n", "Capital City Name", "Population");
+            System.out.printf("%-50s %-15s%n", "City Name", "Population");
             System.out.println("-----------------------------------------------------------------");    //add - depending on the values of the spacing
 
             //Print data
             while (rset.next()) {
-                String CapitalCityName = rset.getString("capital_city");
+                String cityName = rset.getString("city_name");
                 int population = rset.getInt("ci.Population");
-                System.out.printf("%-50s %-15d%n", CapitalCityName, population);
+                System.out.printf("%-50s %-15d%n", cityName, population);
             }
 
         }
