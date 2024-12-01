@@ -6,6 +6,10 @@
 [![LICENSE](https://img.shields.io/github/license/OchoaStdnt/SET09804-G4.svg?style=flat-square)](https://github.com/OchoaStdnt/SET09804-G4/blob/master/LICENSE)
 [![Releases](https://img.shields.io/github/release/OchoaStdnt/SET09804-G4/all.svg?style=flat-square)](https://github.com/OchoaStdnt/SET09804-G4/releases)
 
+## App Information:
+
+> NOTE: To run the app use ```docker-compose run app``` to get an interactive Menu. 
+
 ## Group Members:
 - John Chimezie
 - Angel Ochoa
