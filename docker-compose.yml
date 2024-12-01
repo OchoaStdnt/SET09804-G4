@@ -1,8 +1,15 @@
 version: '3'
 services:
   # Application Dockerfile is in same folder which is .
+  # Added support for user input
   app:
     build: .
+    stdin_open: true
+    tty: true
+    depends_on:
+      - world-db
+    ports:
+      - "8080:8080"
 
   # db is is db folder
   world-db:
