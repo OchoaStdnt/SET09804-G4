@@ -6,7 +6,7 @@
 
     <groupId>SET09803.G4</groupId>
     <artifactId>SET09803-G4</artifactId>
-    <version>0.1.0.1.4</version>
+    <version>0.1.0.1.5</version>
 
     <properties>
         <maven.compiler.source>10</maven.compiler.source>
