@@ -30,9 +30,10 @@ public class Menu {
         do {
             /* Menu */
             System.out.println();   //Blank line
-            System.out.println(GREEN + "Enter the # of the Report you want to run and press 'Enter':" + RESET);   //start of menu.
-            System.out.println(GREEN + "Note all reports are displayed in order of population from largest to smallest." + RESET);   //start of menu.
-            System.out.println(GREEN + "-------------------------------------------------------------------------------" + RESET);   //start of menu.
+            System.out.println(GREEN + "***********************************************************************************" + RESET);   //start of menu.
+            System.out.println(GREEN + "* Enter the # of the Report you want to run and press 'Enter':                    *" + RESET);   //start of menu.
+            System.out.println(GREEN + "* Note all reports are displayed in order of population from largest to smallest. *" + RESET);   //start of menu.
+            System.out.println(GREEN + "***********************************************************************************" + RESET);   //start of menu.
 
             /* Menu Options */
             System.out.println("1. All Countries in World from largest to smallest");   //Added by Angel Ochoa COMPLETED
