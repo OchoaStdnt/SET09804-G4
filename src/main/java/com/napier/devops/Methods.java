@@ -303,6 +303,50 @@ public class Methods {
     }
     //------------------ END Method 6 ------------------------------
 
+    //-------------- Method 7 - All Cities in World ------------------
+    //-------------- Angel Ochoa --------------------
+    public void citiesByWorld()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS city_name, "
+                            + "c.Name AS country_name, " //country name
+                            + "ci.District, "
+                            + "ci.Population "
+                            + "FROM city ci "
+                            + "JOIN country c ON ci.CountryCode = c.Code "
+                            + "ORDER BY ci.Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "All Cities in World:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-40s %-15s%n", "City Name", "Country", "District", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("city_name");
+                String Country = rset.getString("country_name");
+                String District = rset.getString("ci.District");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-40s %-15d%n", cityName, Country, District, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 7 ------------------------------
+
     //-------------- Method 8 - All Cities by Continent ------------------
     //-------------- John Chimezie --------------------
     public void citiesByContinent()
@@ -529,6 +573,100 @@ public class Methods {
     }
     //------------------ END Method 12 ------------------------------
 
+    //-------------- Method 13 - Top Populated Cities by Continent ------------------
+    //-------------- Angel Ochoa --------------------
+    public void topPopCitiesbyContinent()
+    {
+        int userVal = getNum(); // for N value
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS city_name, "
+                            + "c.Name AS country_name, " //country name
+                            + "ci.District, "
+                            + "ci.Population "
+                            + "FROM city ci "
+                            + "JOIN country c ON ci.CountryCode = c.Code "
+                            + "WHERE c.Continent = 'Asia' " //Asia can be changed
+                            + "ORDER BY ci.Population DESC "
+                            + "LIMIT " + userVal;    //limit display
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Top Populated Cities by Continent:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-40s %-15s%n", "City Name", "Country", "District", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("city_name");
+                String Country = rset.getString("country_name");
+                String District = rset.getString("ci.District");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-40s %-15d%n", cityName, Country, District, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 13 ------------------------------
+
+    //-------------- Method 14 - Top Populated Cities by Region ------------------
+    //-------------- Angel Ochoa --------------------
+    public void topPopCitiesbyRegion()
+    {
+        int userVal = getNum(); // for N value
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS city_name, "
+                            + "c.Name AS country_name, " //country name
+                            + "ci.District, "
+                            + "ci.Population "
+                            + "FROM city ci "
+                            + "JOIN country c ON ci.CountryCode = c.Code "
+                            + "WHERE c.Region = 'Caribbean' " //Caribbean can be changed
+                            + "ORDER BY ci.Population DESC "
+                            + "LIMIT " + userVal;    //limit display
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Top Populated Cities by Region:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-40s %-15s%n", "City Name", "Country", "District", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("city_name");
+                String Country = rset.getString("country_name");
+                String District = rset.getString("ci.District");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-40s %-15d%n", cityName, Country, District, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 14 ------------------------------
+
     //-------------- Method 15 - Top Populated Cities by Country ------------------
     //-------------- Bernard Daniel Young --------------------
     public void topPopCitiesByCountry()
@@ -750,6 +888,50 @@ public class Methods {
         }
     }
     //------------------ END Method 19 ------------------------------
+
+    //-------------- Method 20 - Top Populated Capital Cities in world ------------------
+    //-------------- Angel Ochoa --------------------
+    public void topPopCapitalCitiesWorld()
+    {
+        int userVal = getNum(); // for N value
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS capital_city, "
+                            + "c.Name AS country_name, "
+                            + "ci.Population "
+                            + "FROM country c "
+                            + "JOIN city ci ON c.Capital = ci.ID "
+                            + "ORDER BY ci.Population DESC "
+                            + "LIMIT " + userVal;    //limit N display
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Top Populated Capital Cities:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-15s%n", "City Name", "Country", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("capital_city");
+                String Country = rset.getString("country_name");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-15d%n", cityName, Country, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 20 ------------------------------
 
     //-------------- Method 21 - Top Populated capital Cities by Continent ------------------
     //-------------- Kenneth Ramirez --------------------
@@ -984,6 +1166,335 @@ public class Methods {
     }
     //------------------ END Method 25 ------------------------------
 
+    //-------------- Method 26 - Population of the world ------------------
+    //-------------- Angel Ochoa --------------------
+    public void popOfWorld()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT 'World' AS Name, "
+                            + "SUM(c.Population) AS total_population, "
+                            + "SUM(city.Population) AS city_Population, "
+                            + "(SUM(city.Population) / SUM(c.Population)) * 100 AS city_population_percentage, "
+                            + "(SUM(c.Population) - SUM(city.Population)) AS rural_population, "
+                            + "((SUM(c.Population) - SUM(city.Population)) / SUM(c.Population)) * 100 AS rural_population_percentage "
+                            + "FROM country c "
+                            + "LEFT JOIN city ON c.Code = city.CountryCode";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of the world:" + RESET);
+
+            //Print data
+            while (rset.next()) {
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                double totPopCityPer = rset.getDouble("city_population_percentage");
+                long totPopRural = rset.getLong("rural_population");
+                double totPopUrbCityPer = rset.getDouble("rural_population_percentage");
+                //Display
+                System.out.println("Total Population: " + totPop);
+                System.out.println("City Population: " + totPopCity + " (" + totPopCityPer + "%)");
+                System.out.println("Non-City Population: " + totPopRural + " (" + totPopUrbCityPer + "%)");
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 26 ------------------------------
+
+    //-------------- Method 27 - Population of a Continent ------------------
+    //-------------- Angel Ochoa --------------------
+    public void popOfContinent()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT c.Continent AS Name, "
+                            + "SUM(c.Population) AS total_population, "
+                            + "SUM(city.Population) AS city_Population, "
+                            + "(SUM(city.Population) / SUM(c.Population)) * 100 AS city_population_percentage, "
+                            + "(SUM(c.Population) - SUM(city.Population)) AS rural_population, "
+                            + "((SUM(c.Population) - SUM(city.Population)) / SUM(c.Population)) * 100 AS rural_population_percentage "
+                            + "FROM country c "
+                            + "LEFT JOIN city ON c.Code = city.CountryCode "
+                            + "WHERE c.Continent = 'Asia' "
+                            + "GROUP BY c.Continent";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of a Continent:" + RESET);
+
+            //Print data
+            while (rset.next()) {
+                String cName = rset.getString("Name");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                double totPopCityPer = rset.getDouble("city_population_percentage");
+                long totPopRural = rset.getLong("rural_population");
+                double totPopUrbCityPer = rset.getDouble("rural_population_percentage");
+                //Display
+                System.out.println("Continent Name: " + cName);
+                System.out.println("Total Population: " + totPop);
+                System.out.println("City Population: " + totPopCity + " (" + totPopCityPer + "%)");
+                System.out.println("Non-City Population: " + totPopRural + " (" + totPopUrbCityPer + "%)");
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 27 ------------------------------
+
+    //-------------- Method 28 - Population of a region ------------------
+    //-------------- Angel Ochoa --------------------
+    public void popOfRegion()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT c.Region AS Name, "
+                            + "SUM(c.Population) AS total_population, "
+                            + "SUM(city.Population) AS city_Population, "
+                            + "(SUM(city.Population) / SUM(c.Population)) * 100 AS city_population_percentage, "
+                            + "(SUM(c.Population) - SUM(city.Population)) AS rural_population, "
+                            + "((SUM(c.Population) - SUM(city.Population)) / SUM(c.Population)) * 100 AS rural_population_percentage "
+                            + "FROM country c "
+                            + "LEFT JOIN city ON c.Code = city.CountryCode "
+                            + "WHERE c.Region = 'Western Europe' "
+                            + "GROUP BY c.Region";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of a Region:" + RESET);
+
+            //Print data
+            while (rset.next()) {
+                String cName = rset.getString("Name");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                double totPopCityPer = rset.getDouble("city_population_percentage");
+                long totPopRural = rset.getLong("rural_population");
+                double totPopUrbCityPer = rset.getDouble("rural_population_percentage");
+                //Display
+                System.out.println("Region Name: " + cName);
+                System.out.println("Total Population: " + totPop);
+                System.out.println("City Population: " + totPopCity + " (" + totPopCityPer + "%)");
+                System.out.println("Non-City Population: " + totPopRural + " (" + totPopUrbCityPer + "%)");
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 28 ------------------------------
+
+    //-------------- Method 29 - Population of a Country ------------------
+    //-------------- Angel Ochoa --------------------
+    public void popOfCountry()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT c.name AS Name, "
+                            + "c.Population AS total_population, "
+                            + "SUM(city.Population) AS city_population, "
+                            + "(SUM(city.Population) / SUM(c.Population)) * 100 AS city_population_percentage, "
+                            + "(c.Population - SUM(city.Population)) AS rural_population, "
+                            + "((c.Population - SUM(city.Population)) / c.Population) * 100 AS rural_population_percentage "
+                            + "FROM country c "
+                            + "LEFT JOIN city ON c.Code = city.CountryCode "
+                            + "WHERE c.name = 'France' "
+                            + "GROUP BY c.Name, c.Population";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of a Country:" + RESET);
+
+            //Print data
+            while (rset.next()) {
+                String cName = rset.getString("Name");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                double totPopCityPer = rset.getDouble("city_population_percentage");
+                long totPopRural = rset.getLong("rural_population");
+                double totPopUrbCityPer = rset.getDouble("rural_population_percentage");
+                //Display
+                System.out.println("Country Name: " + cName);
+                System.out.println("Total Population: " + totPop);
+                System.out.println("City Population: " + totPopCity + " (" + totPopCityPer + "%)");
+                System.out.println("Non-City Population: " + totPopRural + " (" + totPopUrbCityPer + "%)");
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 29 ------------------------------
+
+    //-------------- Method 30 - Population of a District ------------------
+    //-------------- Angel Ochoa --------------------
+    public void popOfDistrict()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT city.District AS Name, "
+                            + "SUM(city.Population) AS total_population, "
+                            + "SUM(city.Population) AS city_population, "
+                            + "100 AS city_population_percentage, "
+                            + "0 AS rural_population, "
+                            + "0 AS rural_population_percentage "
+                            + "FROM city "
+                            + "WHERE city.District = 'California' "
+                            + "GROUP BY city.District";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of a District:" + RESET);
+
+            //Print data
+            while (rset.next()) {
+                String cName = rset.getString("Name");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                double totPopCityPer = rset.getDouble("city_population_percentage");
+                long totPopRural = rset.getLong("rural_population");
+                double totPopUrbCityPer = rset.getDouble("rural_population_percentage");
+                //Display
+                System.out.println("District Name: " + cName);
+                System.out.println("Total Population: " + totPop);
+                System.out.println("City Population: " + totPopCity + " (" + totPopCityPer + "%)");
+                System.out.println("Non-City Population: " + totPopRural + " (" + totPopUrbCityPer + "%)");
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 30 ------------------------------
+
+    //-------------- Method 31 - Population of a City ------------------
+    //-------------- Angel Ochoa --------------------
+    public void popOfCity()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT city.Name AS Name, "
+                            + "city.Population AS total_population, "
+                            + "city.Population AS city_population, "
+                            + "100 AS city_population_percentage, "
+                            + "0 AS rural_population, "
+                            + "0 AS rural_population_percentage "
+                            + "FROM city "
+                            + "WHERE city.Name = 'Tokyo'";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of a City:" + RESET);
+
+            //Print data
+            while (rset.next()) {
+                String cName = rset.getString("Name");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                double totPopCityPer = rset.getDouble("city_population_percentage");
+                long totPopRural = rset.getLong("rural_population");
+                double totPopUrbCityPer = rset.getDouble("rural_population_percentage");
+                //Display
+                System.out.println("City Name: " + cName);
+                System.out.println("Total Population: " + totPop);
+                System.out.println("City Population: " + totPopCity + " (" + totPopCityPer + "%)");
+                System.out.println("Non-City Population: " + totPopRural + " (" + totPopUrbCityPer + "%)");
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 31 ------------------------------
+
+    //-------------- Method 32 - The population that speak Chinese, English, Hindi, Spanish, and Arabic ------------------
+    //-------------- Angel Ochoa --------------------
+    public void popOfLang()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT cl.Language, "
+                            + "SUM(c.Population * cl.Percentage / 100) AS Speakers, "
+                            + "(SUM(c.Population * cl.Percentage / 100) / (SELECT SUM(Population) FROM country)) * 100 AS worldPopPercentage "
+                            + "FROM countrylanguage cl "
+                            + "JOIN country c ON cl.CountryCode = c.Code "
+                            + "WHERE cl.Language IN ('Chinese', 'English', 'Hindi', 'Spanish', 'Arabic') "
+                            + "GROUP BY cl.Language "
+                            + "ORDER BY Speakers DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "The population that speak Chinese, English, Hindi, Spanish, and Arabic:" + RESET);
+
+            System.out.printf("%-15s %-20s %-20s%n", "Language", "Speakers", "World Population (%)");
+
+            //Print data
+            while (rset.next()) {
+                String lName = rset.getString("Language");
+                long numSpeakers = rset.getLong("Speakers");
+                double worldPer = rset.getDouble("worldPopPercentage");
+                //Display
+                System.out.printf("%-15s %-20d %-20.2f%n", lName, numSpeakers, worldPer);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 32 ------------------------------
 
 
     //-------------------------Connect to DB----------------------------
