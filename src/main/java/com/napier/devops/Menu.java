@@ -37,6 +37,11 @@ public class Menu {
             /* Menu Options */
             System.out.println("1. All Countries in World from largest to smallest");   //Added by Angel Ochoa COMPLETED
             System.out.println("2. All Countries by Continent (Asia) from largest to smallest");  //Added by Donisio Rash COMPLETED
+            System.out.println("3. All Countries by Region (Caribbean) from largest to smallest");  //Added by Donisio Rash
+
+            System.out.println("4. Top Populated Countries in World from largest to smallest");  //Added by Donisio Rash
+            System.out.println("5. Top Populated Countries by Continent (Asia) from largest to smallest");  //Added by Donisio Rash
+            System.out.println("6. Top Populated Countries by Region (Caribbean) from largest to smallest");  //Added by Donisio Rash
 
             System.out.println("8. All Cities by Continent (Asia) from largest to smallest");    //Added by John Chimezie COMPLETED
 
@@ -65,6 +70,19 @@ public class Menu {
                     break;
                 case 2: //Donisio Rash
                     m.countriesByContinent();
+                    break;
+                case 3: //Donisio Rash
+                    m.countriesByRegion();
+                    break;
+
+                case 4: //Donisio Rash
+                    m.topPopCountriesInWorld();
+                    break;
+                case 5: //Donisio Rash
+                    m.topPopCountriesByContinent();
+                    break;
+                case 6: //Donisio Rash
+                    m.topPopCountriesByRegion();
                     break;
 
                 case 8: //John Chimezie
