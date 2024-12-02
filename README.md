@@ -61,3 +61,45 @@
 - Appeal: Any dismissed member has the right to appeal the decision within one week by providing evidence of mitigating circumstances.
 
 ####   By adhering to this code of conduct, we ensure a collaborative, respectful, and effective environment that fosters both individual and team success.
+
+## Requirement Met:
+> 32 requirements of 32 have been implemented, which is 100%
+
+### Table of Requirements: 
+| ID | Name                                                                                          | Met | Screenshot |
+|----|-----------------------------------------------------------------------------------------------|-----| ------------------- |
+| 1  | All Countries in World from largest to smallest                                               | Yes ||
+| 2  | All Countries by Continent (Asia) from largest to smallest                                    | Yes ||
+| 3  | All Countries by Region (Caribbean) from largest to smallest                                  | Yes ||
+| 4  | Top Populated Countries in World from largest to smallest                                     | Yes ||
+| 5  | Top Populated Countries by Continent (Asia) from largest to smallest                          | Yes ||
+| 6  | Top Populated Countries by Region (Caribbean) from largest to smallest                        | Yes ||
+| 7  | All Cities in World from largest to smallest                                                  | Yes ||
+| 8  | All Cities by Continent (Asia) from largest to smallest                                       | Yes ||
+| 9  | All Cities by Region (Caribbean) from largest to smallest                                     | Yes ||
+| 10 | All Cities by Country (United States) from largest to smallest                                | Yes ||
+| 11 | All Cities by District (Kabol) from largest to smallest                                       | Yes ||
+| 12 | Top Populated Cities in World from largest to smallest                                        | Yes ||
+| 13 | Top Populated Cities by Continent (Asia) from largest to smallest                             | Yes ||
+| 14 | Top Populated Cities by Region (Caribbean) from largest to smallest                           | Yes ||
+| 15 | Top Populated Cities by Country (United States) from largest to smallest                      | Yes ||
+| 16 | Top Populated Cities by District (Kabol) from largest to smallest                             | Yes ||
+| 17 | All Capital Cities in World from largest to smallest                                          | Yes ||
+| 18 | All Capital Cities by Continent (Asia) from largest to smallest                               | Yes ||
+| 19 | All Capital Cities by Region (Caribbean) from largest to smallest                             | Yes ||
+| 20 | Top Populated Capital Cities by World from largest to smallest                                | Yes ||
+| 21 | Top Populated Capital Cities by Continent (Asia) from largest to smallest                     | Yes ||
+| 22 | Top Populated Capital Cities by Region (Southeast Asia) from largest to smallest              | Yes ||
+| 23 | The population of people, people in Cities, and people not living in cities by each Continent | Yes ||
+| 24 | The population of people, people in Cities, and people not living in cities by each Region    | Yes ||
+| 25 | The population of people, people in Cities, and people not living in cities by each Country   | Yes ||
+| 26 | The population of the World                                                                   | Yes ||
+| 27 | The population of a Continent (Asia)                                                          | Yes ||
+| 28 | The population of a Region (Western Europe)                                                   | Yes ||
+| 29 | The population of a Country (France)                                                          | Yes ||
+| 30 | The population of a District (California)                                                     | Yes ||
+| 31 | The population of a City (Tokyo)                                                              | Yes ||
+| 32 | The population that speak Chinese, English, Hindi, Spanish, and Arabic                        | Yes ||
+
+
+
