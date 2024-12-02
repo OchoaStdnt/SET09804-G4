@@ -395,6 +395,181 @@ public class Methods {
     }
     //------------------ END Method 15 ------------------------------
 
+    //-------------- Method 16 - Top Populated Cities by District ------------------
+    //-------------- Bernard Daniel Young --------------------
+    public void topPopCitiesByDistrict()
+    {
+        int userVal = getNum(); // for N value
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS city_name, "
+                            + "c.Name AS country_name, " //country name
+                            + "ci.District, "
+                            + "ci.Population "
+                            + "FROM city ci "
+                            + "JOIN country c ON ci.CountryCode = c.Code "
+                            + "WHERE ci.District = 'Kabol' "   //Kabol can be changed
+                            + "ORDER BY ci.Population DESC "
+                            + "LIMIT " + userVal;    //limit display
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Top Populated Cities by District:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-40s %-15s%n", "City Name", "Country", "District", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("city_name");
+                String Country = rset.getString("country_name");
+                String District = rset.getString("ci.District");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-40s %-15d%n", cityName, Country, District, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 16 ------------------------------
+
+    //-------------- Method 17 - All Capital Cities in World ------------------
+    //-------------- Bernard Daniel Young --------------------
+    public void allCapCitiesWorld()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS capital_city, "
+                            + "c.Name AS country_name, "
+                            + "ci.Population "
+                            + "FROM country c "
+                            + "JOIN city ci ON c.Capital = ci.ID "
+                            + "ORDER BY ci.Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "All Capital Cities in World:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-15s%n", "City Name", "Country", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("capital_city");
+                String Country = rset.getString("country_name");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-15d%n", cityName, Country, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 17 ------------------------------
+
+    //-------------- Method 18 - All Capital Cities by Continent ------------------
+    //-------------- Bernard Daniel Young --------------------
+    public void allCapCitiesByContinent()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS capital_city, "
+                            + "c.Name AS country_name, "
+                            + "ci.Population "
+                            + "FROM country c "
+                            + "JOIN city ci ON c.Capital = ci.ID "
+                            + "WHERE c.Continent = 'Asia' "   //Asia can be changed to another Continent
+                            + "ORDER BY ci.Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "All Capital Cities by Continent:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-15s%n", "City Name", "Country", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("capital_city");
+                String Country = rset.getString("country_name");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-15d%n", cityName, Country, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 18 ------------------------------
+
+    //-------------- Method 19 - All Capital Cities by Region ------------------
+    //-------------- Bernard Daniel Young --------------------
+    public void allCapCitiesByRegion()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS capital_city, "
+                            + "c.Name AS country_name, "
+                            + "ci.Population "
+                            + "FROM country c "
+                            + "JOIN city ci ON c.Capital = ci.ID "
+                            + "WHERE c.Region = 'Caribbean' "   //Caribbean can be changed
+                            + "ORDER BY ci.Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "All Capital Cities by Region:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-15s%n", "City Name", "Country", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("capital_city");
+                String Country = rset.getString("country_name");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-15d%n", cityName, Country, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 19 ------------------------------
+
     //-------------- Method 21 - Top Populated capital Cities by Continent ------------------
     //-------------- Kenneth Ramirez --------------------
     public void topPopCapitalCitiesByContinent()

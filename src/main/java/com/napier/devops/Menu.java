@@ -47,6 +47,12 @@ public class Menu {
 
             System.out.println("15. Top Populated Cities by Country (United States) from largest to smallest");  //Added by Bernard Young COMPLETED
 
+            System.out.println("16. Top Populated Cities by District (Kabol) from largest to smallest");  //Added by Bernard Young
+
+            System.out.println("17. All Capital Cities in World from largest to smallest");  //Added by Bernard Young
+            System.out.println("18. All Capital Cities by Continent (Asia) from largest to smallest");  //Added by Bernard Young
+            System.out.println("19. All Capital Cities by Region (Caribbean) from largest to smallest");  //Added by Bernard Young
+
             System.out.println("21. Top Populated Capital Cities by Continent (Asia) from largest to smallest");  //Added by Kenneth Ramirez COMPLETED
 
             /* Exit Menu/Application */
@@ -91,6 +97,20 @@ public class Menu {
 
                 case 15: //Bernard Young
                     m.topPopCitiesByCountry();
+                    break;
+
+                case 16: //Bernard Young
+                    m.topPopCitiesByDistrict();
+                    break;
+
+                case 17: //Bernard Young
+                    m.allCapCitiesWorld();
+                    break;
+                case 18: //Bernard Young
+                    m.allCapCitiesByContinent();
+                    break;
+                case 19: //Bernard Young
+                    m.allCapCitiesByRegion();
                     break;
 
                 case 21: //Kenneth Ramirez
