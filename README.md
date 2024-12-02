@@ -66,40 +66,40 @@
 > 32 requirements of 32 have been implemented, which is 100%
 
 ### Table of Requirements: 
-| ID | Name                                                                                          | Met | Screenshot |
-|----|-----------------------------------------------------------------------------------------------|-----| ------------------- |
-| 1  | All Countries in World from largest to smallest                                               | Yes ||
-| 2  | All Countries by Continent (Asia) from largest to smallest                                    | Yes ||
-| 3  | All Countries by Region (Caribbean) from largest to smallest                                  | Yes ||
-| 4  | Top Populated Countries in World from largest to smallest                                     | Yes ||
-| 5  | Top Populated Countries by Continent (Asia) from largest to smallest                          | Yes ||
-| 6  | Top Populated Countries by Region (Caribbean) from largest to smallest                        | Yes ||
-| 7  | All Cities in World from largest to smallest                                                  | Yes ||
-| 8  | All Cities by Continent (Asia) from largest to smallest                                       | Yes ||
-| 9  | All Cities by Region (Caribbean) from largest to smallest                                     | Yes ||
-| 10 | All Cities by Country (United States) from largest to smallest                                | Yes ||
-| 11 | All Cities by District (Kabol) from largest to smallest                                       | Yes ||
-| 12 | Top Populated Cities in World from largest to smallest                                        | Yes ||
-| 13 | Top Populated Cities by Continent (Asia) from largest to smallest                             | Yes ||
-| 14 | Top Populated Cities by Region (Caribbean) from largest to smallest                           | Yes ||
-| 15 | Top Populated Cities by Country (United States) from largest to smallest                      | Yes ||
-| 16 | Top Populated Cities by District (Kabol) from largest to smallest                             | Yes ||
-| 17 | All Capital Cities in World from largest to smallest                                          | Yes ||
-| 18 | All Capital Cities by Continent (Asia) from largest to smallest                               | Yes ||
-| 19 | All Capital Cities by Region (Caribbean) from largest to smallest                             | Yes ||
-| 20 | Top Populated Capital Cities by World from largest to smallest                                | Yes ||
-| 21 | Top Populated Capital Cities by Continent (Asia) from largest to smallest                     | Yes ||
-| 22 | Top Populated Capital Cities by Region (Southeast Asia) from largest to smallest              | Yes ||
-| 23 | The population of people, people in Cities, and people not living in cities by each Continent | Yes ||
-| 24 | The population of people, people in Cities, and people not living in cities by each Region    | Yes ||
-| 25 | The population of people, people in Cities, and people not living in cities by each Country   | Yes ||
-| 26 | The population of the World                                                                   | Yes ||
-| 27 | The population of a Continent (Asia)                                                          | Yes ||
-| 28 | The population of a Region (Western Europe)                                                   | Yes ||
-| 29 | The population of a Country (France)                                                          | Yes ||
-| 30 | The population of a District (California)                                                     | Yes ||
-| 31 | The population of a City (Tokyo)                                                              | Yes ||
-| 32 | The population that speak Chinese, English, Hindi, Spanish, and Arabic                        | Yes ||
+| ID | Name                                                                                          | Met | Screenshot            |
+|----|-----------------------------------------------------------------------------------------------|-----|-----------------------|
+| 1  | All Countries in World from largest to smallest                                               | Yes | ![](TablesIMG/1.jpg)  |
+| 2  | All Countries by Continent (Asia) from largest to smallest                                    | Yes | ![](TablesIMG/2.jpg)  |
+| 3  | All Countries by Region (Caribbean) from largest to smallest                                  | Yes | ![](TablesIMG/3.jpg)  |
+| 4  | Top Populated Countries in World from largest to smallest                                     | Yes | ![](TablesIMG/4.jpg)  |
+| 5  | Top Populated Countries by Continent (Asia) from largest to smallest                          | Yes | ![](TablesIMG/5.jpg)  |
+| 6  | Top Populated Countries by Region (Caribbean) from largest to smallest                        | Yes | ![](TablesIMG/6.jpg)  |
+| 7  | All Cities in World from largest to smallest                                                  | Yes | ![](TablesIMG/7.jpg)  |
+| 8  | All Cities by Continent (Asia) from largest to smallest                                       | Yes | ![](TablesIMG/8.jpg)  |
+| 9  | All Cities by Region (Caribbean) from largest to smallest                                     | Yes | ![](TablesIMG/9.jpg)  |
+| 10 | All Cities by Country (United States) from largest to smallest                                | Yes | ![](TablesIMG/10.jpg) |
+| 11 | All Cities by District (Kabol) from largest to smallest                                       | Yes | ![](TablesIMG/11.jpg) |
+| 12 | Top Populated Cities in World from largest to smallest                                        | Yes | ![](TablesIMG/12.jpg) |
+| 13 | Top Populated Cities by Continent (Asia) from largest to smallest                             | Yes | ![](TablesIMG/13.jpg) |
+| 14 | Top Populated Cities by Region (Caribbean) from largest to smallest                           | Yes | ![](TablesIMG/14.jpg) |
+| 15 | Top Populated Cities by Country (United States) from largest to smallest                      | Yes | ![](TablesIMG/15.jpg) |
+| 16 | Top Populated Cities by District (Kabol) from largest to smallest                             | Yes | ![](TablesIMG/16.jpg) |
+| 17 | All Capital Cities in World from largest to smallest                                          | Yes | ![](TablesIMG/17.jpg) |
+| 18 | All Capital Cities by Continent (Asia) from largest to smallest                               | Yes | ![](TablesIMG/18.jpg) |
+| 19 | All Capital Cities by Region (Caribbean) from largest to smallest                             | Yes | ![](TablesIMG/19.jpg) |
+| 20 | Top Populated Capital Cities by World from largest to smallest                                | Yes | ![](TablesIMG/20.jpg) |
+| 21 | Top Populated Capital Cities by Continent (Asia) from largest to smallest                     | Yes | ![](TablesIMG/21.jpg) |
+| 22 | Top Populated Capital Cities by Region (Southeast Asia) from largest to smallest              | Yes | ![](TablesIMG/22.jpg) |
+| 23 | The population of people, people in Cities, and people not living in cities by each Continent | Yes | ![](TablesIMG/23.jpg) |
+| 24 | The population of people, people in Cities, and people not living in cities by each Region    | Yes | ![](TablesIMG/24.jpg) |
+| 25 | The population of people, people in Cities, and people not living in cities by each Country   | Yes | ![](TablesIMG/25.jpg) |
+| 26 | The population of the World                                                                   | Yes | ![](TablesIMG/26.jpg) |
+| 27 | The population of a Continent (Asia)                                                          | Yes | ![](TablesIMG/27.jpg) |
+| 28 | The population of a Region (Western Europe)                                                   | Yes | ![](TablesIMG/28.jpg) |
+| 29 | The population of a Country (France)                                                          | Yes | ![](TablesIMG/29.jpg) |
+| 30 | The population of a District (California)                                                     | Yes | ![](TablesIMG/30.jpg) |
+| 31 | The population of a City (Tokyo)                                                              | Yes | ![](TablesIMG/31.jpg) |
+| 32 | The population that speak Chinese, English, Hindi, Spanish, and Arabic                        | Yes | ![](TablesIMG/32.jpg) |
 
 
 
