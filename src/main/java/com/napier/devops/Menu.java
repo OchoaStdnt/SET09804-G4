@@ -44,6 +44,11 @@ public class Menu {
             System.out.println("6. Top Populated Countries by Region (Caribbean) from largest to smallest");  //Added by Donisio Rash
 
             System.out.println("8. All Cities by Continent (Asia) from largest to smallest");    //Added by John Chimezie COMPLETED
+            System.out.println("9. All Cities by Region (Caribbean) from largest to smallest");    //Added by John Chimezie
+            System.out.println("10. All Cities by Country (United States) from largest to smallest");    //Added by John Chimezie
+            System.out.println("11. All Cities by District (Kabol) from largest to smallest");    //Added by John Chimezie
+
+            System.out.println("12. Top Populated Cities in World from largest to smallest");    //Added by John Chimezie
 
             System.out.println("15. Top Populated Cities by Country (United States) from largest to smallest");  //Added by Bernard Young COMPLETED
 
@@ -98,7 +103,19 @@ public class Menu {
                 case 8: //John Chimezie
                     m.citiesByContinent();
                     break;
+                case 9: //John Chimezie
+                    m.citiesByRegion();
+                    break;
+                case 10: //John Chimezie
+                    m.citiesByCountry();
+                    break;
+                case 11: //John Chimezie
+                    m.citiesByDistrict();
+                    break;
 
+                case 12: //John Chimezie
+                    m.topPopCitiesInWorld();
+                    break;
                 case 15: //Bernard Young
                     m.topPopCitiesByCountry();
                     break;
