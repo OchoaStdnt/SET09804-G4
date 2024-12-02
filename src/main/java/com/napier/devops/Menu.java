@@ -78,6 +78,9 @@ public class Menu {
             System.out.println("29. The population of a Country (France)");  //Added by Angel Ochoa
             System.out.println("30. The population of a District (California)");  //Added by Angel Ochoa
             System.out.println("31. The population of a City (Tokyo)");  //Added by Angel Ochoa
+
+            System.out.println("32. The population that speak Chinese, English, Hindi, Spanish, and Arabic");  //Added by Angel Ochoa
+
             /* Exit Menu/Application */
             System.out.println("0. Exit");  //Added by Angel Ochoa
 
