@@ -49,9 +49,14 @@ public class Menu {
 
             /* Test DB */
             System.out.println(YELLOW + "1234. TEST DATABASE (Show Tables on World DB)" + RESET);   //Added by Angel Ochoa
-            userChoice = userInput.nextInt();   //Read user input
-            userInput.nextLine();   //Save the user input
+            /* ENABLE THIS 2 LINES TO USE THE APP CORRECTLY */
+            //userChoice = userInput.nextInt();   //Read user input (UNCOMMENT THIS LINE FOR USE OFF APP)
+            //userInput.nextLine();   //Save the user input (UNCOMMENT THIS LINE FOR USE OFF APP)
+            //--------------------------------------------------------------
             System.out.println();   //Blank line
+
+            /* Use this section to pass the CI on github actions and Comment out when using the app with an actual user*/
+            userChoice = 0; //This is only for the github actions (COMMENT OUT THIS LINE WHEN USING THE APP)
 
             switch (userChoice) {
                 /* Reports */
