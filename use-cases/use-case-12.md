@@ -1,4 +1,4 @@
-# USE CASE: 8 Produce a report on all the cities in a continent organised by largest population to smallest
+# USE CASE: 12 As a global urban researcher,I want to view the top N populated cities in the world, where N is provided by the user, so that I can focus my study on the largest urban areas across the globe for comparative analysis
 
 ## CHARACTERISTIC INFORMATION
 

@@ -1,4 +1,4 @@
-# USE CASE: 8 Produce a report on all the cities in a continent organised by largest population to smallest
+# USE CASE: 9 As a regional development analyst, I want to view all the cities in a specific region organized by largest population to smallest, so that I can identify the major urban centers in the region for targeted analysis and resource allocation
 
 ## CHARACTERISTIC INFORMATION
 

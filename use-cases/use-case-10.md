@@ -1,4 +1,4 @@
-# USE CASE: 8 Produce a report on all the cities in a continent organised by largest population to smallest
+# USE CASE: 10 As a national policymaker,I want to view all the cities in a specific country organized by largest population to smallest,so that I can focus on key cities in the country based on population size for national development planning
 
 ## CHARACTERISTIC INFORMATION
 
