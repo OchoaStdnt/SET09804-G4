@@ -115,6 +115,194 @@ public class Methods {
     }
     //------------------ END Method 2 ------------------------------\
 
+    //-------------- Method 3 - All countries by Region ------------------
+    //-------------- Donisio Rash --------------------
+    public void countriesByRegion()
+    {
+        try
+        {
+            /* Create an SQL statement */
+            Statement stmt = con.createStatement();
+            /* Create string for SQL statement */
+            String strSelect =
+                    /* SQL query */
+                    "SELECT Code, "
+                            + "Name AS country_name, "
+                            + "Continent, "
+                            + "Region, "
+                            + "Population, "
+                            + "Capital "
+                            + "FROM country "
+                            + "WHERE Region = 'Caribbean' "   //Caribbean can be changed to another region
+                            + "ORDER BY Population DESC";
+            /* Execute SQL statement */
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            /* Report Name */
+            System.out.println(GREEN + "All countries by Region:" + RESET);
+
+            /* Header in SQL style */
+            System.out.printf("%-5s %-50s %-20s %-40s %-15s %-6s%n", "Code", "Country Name", "Continent", "Region", "Population", "Capital");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            /* Print data */
+            while (rset.next()) {
+                String countryCode = rset.getString("Code");
+                String countryName = rset.getString("country_name");
+                String conti = rset.getString("Continent");
+                String regn = rset.getString("Region");
+                int population = rset.getInt("Population");
+                int countryCapital = rset.getInt("Capital");
+                System.out.printf("%-5s %-50s %-20s %-40s %-15d %-6d%n", countryCode, countryName, conti, regn, population, countryCapital);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 3 ------------------------------
+
+    //-------------- Method 4 - Top populated countries in world ------------------
+    //-------------- Donisio Rash --------------------
+    public void topPopCountriesInWorld() {
+        int userVal = getNum(); // for N value
+        try {
+            /* Create an SQL statement */
+            Statement stmt = con.createStatement();
+            /* Create string for SQL statement */
+            String strSelect =
+                    /* SQL query */
+                    "SELECT Code, "
+                            + "Name AS country_name, "
+                            + "Continent, "
+                            + "Region, "
+                            + "Population, "
+                            + "Capital "
+                            + "FROM country "
+                            + "ORDER BY Population DESC "
+                            + "LIMIT " + userVal;   //limit display
+            /* Execute SQL statement */
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            /* Report Name */
+            System.out.println(GREEN + "Top populated countries in world:" + RESET);
+
+            /* Header in SQL style */
+            System.out.printf("%-5s %-50s %-20s %-40s %-15s %-6s%n", "Code", "Country Name", "Continent", "Region", "Population", "Capital");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            /* Print data */
+            while (rset.next()) {
+                String countryCode = rset.getString("Code");
+                String countryName = rset.getString("country_name");
+                String conti = rset.getString("Continent");
+                String regn = rset.getString("Region");
+                int population = rset.getInt("Population");
+                int countryCapital = rset.getInt("Capital");
+                System.out.printf("%-5s %-50s %-20s %-40s %-15d %-6d%n", countryCode, countryName, conti, regn, population, countryCapital);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 4 ------------------------------
+
+    //-------------- Method 5 - Top populated countries by Continent ------------------
+    //-------------- Donisio Rash --------------------
+    public void topPopCountriesByContinent() {
+        int userVal = getNum(); // for N value
+        try {
+            /* Create an SQL statement */
+            Statement stmt = con.createStatement();
+            /* Create string for SQL statement */
+            String strSelect =
+                    /* SQL query */
+                    "SELECT Code, "
+                            + "Name AS country_name, "
+                            + "Continent, "
+                            + "Region, "
+                            + "Population, "
+                            + "Capital "
+                            + "FROM country "
+                            + "WHERE Continent = 'Asia' "   //Asia can be changed to another Continent
+                            + "ORDER BY Population DESC "
+                            + "LIMIT " + userVal;   //limit display
+            /* Execute SQL statement */
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            /* Report Name */
+            System.out.println(GREEN + "Top populated countries by Continent:" + RESET);
+
+            /* Header in SQL style */
+            System.out.printf("%-5s %-50s %-20s %-40s %-15s %-6s%n", "Code", "Country Name", "Continent", "Region", "Population", "Capital");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            /* Print data */
+            while (rset.next()) {
+                String countryCode = rset.getString("Code");
+                String countryName = rset.getString("country_name");
+                String conti = rset.getString("Continent");
+                String regn = rset.getString("Region");
+                int population = rset.getInt("Population");
+                int countryCapital = rset.getInt("Capital");
+                System.out.printf("%-5s %-50s %-20s %-40s %-15d %-6d%n", countryCode, countryName, conti, regn, population, countryCapital);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 5 ------------------------------
+
+    //-------------- Method 6 - Top populated countries by Region ------------------
+    //-------------- Donisio Rash --------------------
+    public void topPopCountriesByRegion() {
+        int userVal = getNum(); // for N value
+        try {
+            /* Create an SQL statement */
+            Statement stmt = con.createStatement();
+            /* Create string for SQL statement */
+            String strSelect =
+                    /* SQL query */
+                    "SELECT Code, "
+                            + "Name AS country_name, "
+                            + "Continent, "
+                            + "Region, "
+                            + "Population, "
+                            + "Capital "
+                            + "FROM country "
+                            + "WHERE Region = 'Caribbean' "   //Caribbean can be changed to another Region
+                            + "ORDER BY Population DESC "
+                            + "LIMIT " + userVal;   //limit display
+            /* Execute SQL statement */
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            /* Report Name */
+            System.out.println(GREEN + "Top populated countries by Region:" + RESET);
+
+            /* Header in SQL style */
+            System.out.printf("%-5s %-50s %-20s %-40s %-15s %-6s%n", "Code", "Country Name", "Continent", "Region", "Population", "Capital");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            /* Print data */
+            while (rset.next()) {
+                String countryCode = rset.getString("Code");
+                String countryName = rset.getString("country_name");
+                String conti = rset.getString("Continent");
+                String regn = rset.getString("Region");
+                int population = rset.getInt("Population");
+                int countryCapital = rset.getInt("Capital");
+                System.out.printf("%-5s %-50s %-20s %-40s %-15d %-6d%n", countryCode, countryName, conti, regn, population, countryCapital);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 6 ------------------------------
+
     //-------------- Method 8 - All Cities by Continent ------------------
     //-------------- John Chimezie --------------------
     public void citiesByContinent()
