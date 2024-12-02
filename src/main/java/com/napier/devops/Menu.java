@@ -54,7 +54,11 @@ public class Menu {
             System.out.println("19. All Capital Cities by Region (Caribbean) from largest to smallest");  //Added by Bernard Young
 
             System.out.println("21. Top Populated Capital Cities by Continent (Asia) from largest to smallest");  //Added by Kenneth Ramirez COMPLETED
+            System.out.println("22. Top Populated Capital Cities by Region (Southeast Asia) from largest to smallest");  //Added by Kenneth Ramirez
 
+            System.out.println("23. The population of people, people in Cities, and people not living in cities by each Continent");  //Added by Kenneth Ramirez
+            System.out.println("24. The population of people, people in Cities, and people not living in cities by each Region");  //Added by Kenneth Ramirez
+            System.out.println("25. The population of people, people in Cities, and people not living in cities by each Country");  //Added by Kenneth Ramirez
             /* Exit Menu/Application */
             System.out.println("0. Exit");  //Added by Angel Ochoa
 
@@ -115,6 +119,19 @@ public class Menu {
 
                 case 21: //Kenneth Ramirez
                     m.topPopCapitalCitiesByContinent();
+                    break;
+                case 22: //Kenneth Ramirez
+                    m.topPopCapitalCitiesByRegion();
+                    break;
+
+                case 23: //Kenneth Ramirez
+                    m.popOfPplPplCitiesPplNotCityByContinent();
+                    break;
+                case 24: //Kenneth Ramirez
+                    m.popOfPplPplCitiesPplNotCityByRegion();
+                    break;
+                case 25: //Kenneth Ramirez
+                    m.popOfPplPplCitiesPplNotCityByCountry();
                     break;
 
                 /* exit */

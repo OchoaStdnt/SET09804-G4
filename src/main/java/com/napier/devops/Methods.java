@@ -615,6 +615,194 @@ public class Methods {
     }
     //------------------ END Method 21 ------------------------------
 
+    //-------------- Method 22 - Top Populated Capital Cities by Region ------------------
+    //-------------- Kenneth Ramirez --------------------
+    public void topPopCapitalCitiesByRegion()
+    {
+        int userVal = getNum(); // for N value
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT ci.Name AS capital_city, "
+                            + "c.Name AS country_name, "
+                            + "ci.Population "
+                            + "FROM country c "
+                            + "JOIN city ci ON c.Capital = ci.ID "
+                            + "WHERE c.Region = 'Southeast Asia' "   //Southeast Asia can be changed
+                            + "ORDER BY ci.Population DESC "
+                            + "LIMIT " + userVal;    //limit N display
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Top Populated Capital Cities by Region:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-50s %-15s%n", "City Name", "Country", "Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String cityName = rset.getString("capital_city");
+                String Country = rset.getString("country_name");
+                int population = rset.getInt("ci.Population");
+                System.out.printf("%-50s %-50s %-15d%n", cityName, Country, population);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 22 ------------------------------
+
+    //-------------- Method 23 - Population of people, people in cities, people not in cities by Continent ------------------
+    //-------------- Kenneth Ramirez --------------------
+    public void popOfPplPplCitiesPplNotCityByContinent()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT c.Continent, "
+                            + "SUM(c.Population) AS total_population, "
+                            + "SUM(ci.CityPopulation) AS city_population, "
+                            + "SUM(c.Population) - SUM(ci.CityPopulation) AS rural_population "
+                            + "FROM country c "
+                            + "LEFT JOIN "
+                            + "(SELECT ct.CountryCode, "
+                            + "SUM(ct.Population) AS CityPopulation "
+                            + "FROM city ct "
+                            + "GROUP BY ct.CountryCode) ci ON c.Code = ci.CountryCode "
+                            + "GROUP BY c.Continent";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of people, people in cities, people not in cities by Continent:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-20s %-20s %-20s%n", "Continent", "Total Population", "City Population", "Rural Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String ContinentN = rset.getString("c.Continent");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                long totPopRural = rset.getLong("rural_population");
+                System.out.printf("%-50s %-20d %-20d %-20d%n", ContinentN, totPop, totPopCity, totPopRural);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 23 ------------------------------
+
+    //-------------- Method 24 - Population of people, people in cities, people not in cities by Region ------------------
+    //-------------- Kenneth Ramirez --------------------
+    public void popOfPplPplCitiesPplNotCityByRegion()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT c.Region, "
+                            + "SUM(c.Population) AS total_population, "
+                            + "SUM(ci.CityPopulation) AS city_population, "
+                            + "SUM(c.Population) - SUM(ci.CityPopulation) AS rural_population "
+                            + "FROM country c "
+                            + "LEFT JOIN "
+                            + "(SELECT ct.CountryCode, "
+                            + "SUM(ct.Population) AS CityPopulation "
+                            + "FROM city ct "
+                            + "GROUP BY ct.CountryCode) ci ON c.Code = ci.CountryCode "
+                            + "GROUP BY c.Region";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of people, people in cities, people not in cities by Region:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-20s %-20s %-20s%n", "Region", "Total Population", "City Population", "Rural Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String regionN = rset.getString("c.Region");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                long totPopRural = rset.getLong("rural_population");
+                System.out.printf("%-50s %-20d %-20d %-20d%n", regionN, totPop, totPopCity, totPopRural);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 24 ------------------------------
+
+    //-------------- Method 25 - Population of people, people in cities, people not in cities by Country ------------------
+    //-------------- Kenneth Ramirez --------------------
+    public void popOfPplPplCitiesPplNotCityByCountry()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    //SQL query
+                    "SELECT c.Name AS CountryName, "
+                            + "c.Population AS total_population, "
+                            + "COALESCE(ci.CityPopulation, 0) AS city_population, "
+                            + "c.Population - COALESCE(ci.CityPopulation, 0) AS rural_population "
+                            + "FROM country c "
+                            + "LEFT JOIN "
+                            + "(SELECT ct.CountryCode, "
+                            + "SUM(ct.Population) AS CityPopulation "
+                            + "FROM city ct "
+                            + "GROUP BY ct.CountryCode) ci ON c.Code = ci.CountryCode";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Report Name
+            System.out.println(GREEN + "Population of people, people in cities, people not in cities by Country:" + RESET);
+
+            // Header in SQL style
+            System.out.printf("%-50s %-20s %-20s %-20s%n", "Country Name", "Total Population", "City Population", "Rural Population");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------");    //add - depending on the values of the spacing
+
+            //Print data
+            while (rset.next()) {
+                String countryN = rset.getString("CountryName");
+                long totPop = rset.getLong("total_population");
+                long totPopCity = rset.getLong("city_population");
+                long totPopRural = rset.getLong("rural_population");
+                System.out.printf("%-50s %-20d %-20d %-20d%n", countryN, totPop, totPopCity, totPopRural);
+            }
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //------------------ END Method 25 ------------------------------
+
 
 
     //-------------------------Connect to DB----------------------------
