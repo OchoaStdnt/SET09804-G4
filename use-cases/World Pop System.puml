@@ -1,0 +1,42 @@
+@startuml
+
+actor USER as "Reporting User"
+
+rectangle WorldDB
+
+rectangle "World Population System" {
+
+    usecase UC1 as "Get all Countries by Population"
+    usecase UC2 as "Get countries by continent"
+    usecase UC8 as "Get cities by continent"
+    usecase UC15 as "Get Top Populated Capital Cities by Region"
+    usecase UC21 as "Get Top Populated Capital Cities by continent"
+
+    usecase UCa as "Print all countries by population"
+    usecase UCb as "Print countries by continent"
+    usecase UCh as "Print cities by continent"
+    usecase UCo as "Print top populated capital cities by region"
+    usecase UCp as "Print top populated capital cities by continent"
+
+    USER - UC1
+    UC1 ..> UCa : include
+    UC1 - WorldDB
+
+    USER - UC2
+    UC2 ..> UCb : include
+    UC2 - WorldDB
+
+    USER -UC8
+    UC8 ..> UCh : include
+    UC8 - WorldDB
+
+    USER -UC15
+    UC15 ..> UCo : include
+    UC15 - WorldDB
+
+    USER -UC21
+    UC21 ..> UCp : include
+    UC21 - WorldDB
+}
+
+@enduml
