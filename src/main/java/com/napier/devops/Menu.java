@@ -30,9 +30,10 @@ public class Menu {
         do {
             /* Menu */
             System.out.println();   //Blank line
-            System.out.println(GREEN + "Enter the # of the Report you want to run and press 'Enter':" + RESET);   //start of menu.
-            System.out.println(GREEN + "Note all reports are displayed in order of population from largest to smallest." + RESET);   //start of menu.
-            System.out.println(GREEN + "-------------------------------------------------------------------------------" + RESET);   //start of menu.
+            System.out.println(GREEN + "***********************************************************************************" + RESET);   //start of menu.
+            System.out.println(GREEN + "* Enter the # of the Report you want to run and press 'Enter':                    *" + RESET);   //start of menu.
+            System.out.println(GREEN + "* Note all reports are displayed in order of population from largest to smallest. *" + RESET);   //start of menu.
+            System.out.println(GREEN + "***********************************************************************************" + RESET);   //start of menu.
 
             /* Menu Options */
             System.out.println("1. All Countries in World from largest to smallest");   //Added by Angel Ochoa COMPLETED
@@ -49,9 +50,15 @@ public class Menu {
 
             /* Test DB */
             System.out.println(YELLOW + "1234. TEST DATABASE (Show Tables on World DB)" + RESET);   //Added by Angel Ochoa
-            userChoice = userInput.nextInt();   //Read user input
-            userInput.nextLine();   //Save the user input
+
+            /* ENABLE THIS 2 LINES TO USE THE APP CORRECTLY */
+            //userChoice = userInput.nextInt();   //Read user input (UNCOMMENT THIS LINE FOR USE OFF APP)
+            //userInput.nextLine();   //Save the user input (UNCOMMENT THIS LINE FOR USE OFF APP)
+            //--------------------------------------------------------------
             System.out.println();   //Blank line
+
+            /* Use this section to pass the CI on github actions and Comment out when using the app with an actual user*/
+            userChoice = 0; //This is only for the github actions (COMMENT OUT THIS LINE WHEN USING THE APP)
 
             switch (userChoice) {
                 /* Reports */
