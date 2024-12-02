@@ -49,11 +49,6 @@ public class Menu {
             System.out.println("11. All Cities by District (Kabol) from largest to smallest");    //Added by John Chimezie
 
             System.out.println("12. Top Populated Cities in World from largest to smallest");    //Added by John Chimezie
-            System.out.println("9. All Cities by Region (Caribbean) from largest to smallest");    //Added by John Chimezie
-            System.out.println("10. All Cities by Country (United States) from largest to smallest");    //Added by John Chimezie
-            System.out.println("11. All Cities by District (Kabol) from largest to smallest");    //Added by John Chimezie
-
-            System.out.println("12. Top Populated Cities in World from largest to smallest");    //Added by John Chimezie
 
             System.out.println("15. Top Populated Cities by Country (United States) from largest to smallest");  //Added by Bernard Young COMPLETED
 
