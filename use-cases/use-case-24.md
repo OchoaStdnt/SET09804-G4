@@ -1,10 +1,10 @@
-# USE CASE: The top N populated capital cities in a continent where N is provided by the user
+# USE CASE: The population of people, people living in cities, and people not living in cities in each country.
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-*As a researcher, I want to view the top N populated capital cities in a continent, where N is provided by the user, so that I can identify the largest capital cities by population on that continent for regional studies.*
+*As a analyst, I want to view the total population, people living in cities, and people not living in cities for each country, so that I can study the balance between urban and rural populations within individual countries.*
 
 ### Scope
 
@@ -37,7 +37,7 @@
 ## MAIN SUCCESS SCENARIO
 
 1. User requires information from the World Database.
-2. User Produce a report for the top N of populated cities in a Continent where N is provided by the User, so that they can identify the largest capital cities by populatiom  on that continent for regional studies.
+2. User Produce a report for the analysis of the total population of people living in cities, and people not living in cities for each country.
 
 ## EXTENSIONS
 
