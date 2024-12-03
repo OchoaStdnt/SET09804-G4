@@ -15,10 +15,10 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Build with Maven
+        run: mvn package
       - name: Unit Tests
-17	    run: mvn -Dtest=com.napier.devops.AppTest test
-      #- name: Build with Maven
-       # run: mvn package
+        run: mvn -Dtest=com.napier.devops.AppTest test
       - name: Run docker compose with a simulated input # this is so the action does not stay waiting for a user input. the 0 exits the application. also using "docker compose run app" instead of "docker compose up" so that it accepts the "0"
         run: |
           mvn package -DskipTests
