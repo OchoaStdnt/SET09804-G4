@@ -15,6 +15,10 @@ public class App {
         /* New instance for Menu class */
         Menu m = new Menu();
 
+        //Lab 7 test NOT working
+        //Methods me = new Methods();
+        //me.connectToDatabase(args);
+
         /* Load Menu from Menu.java */
         m.menu();
     }

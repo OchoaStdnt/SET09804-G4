@@ -1613,3 +1613,61 @@ public class Methods {
     }
     // -----------END input for N
 }
+
+/*  THIS WAS TEST LAB 7 DID NOT WORK
+    //-------------------------Connect to DB----------------------------
+    public void connectToDatabase(String[] args) {
+        // if no parameters connect locally
+        if (args.length < 1) {
+            connect("localhost:33060", 0);
+            // otherwise use connection string and delay passed as
+            // parameters from command line or DockerFile
+        } else {
+            connect(args[0], Integer.parseInt(args[1]));
+        }
+    }
+    //--------------------END Connect to DB 2------------------------
+
+    //-------------------------Connect to DB----------------------------
+    public void connect(String conString, int delay)
+    {
+        try
+        {
+            // Load Database driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }
+        catch (ClassNotFoundException e)
+        {
+            System.out.println("Could not load SQL driver");
+            System.exit(-1);
+        }
+
+        int retries = 10;
+        for (int i = 0; i < retries; ++i)
+        {
+            System.out.println(BLUE + "Connecting to database..." + RESET);
+            try
+            {
+                // Wait a bit for db to start
+                Thread.sleep(delay);
+                // Connect to database world in world-db
+                con = DriverManager.getConnection("jdbc:mysql://" +conString
+                        + "world-db:3306/world?useSSL=false", "root", "p@sswdr00t");
+                //conn = con;
+                System.out.println(BLUE + "Successfully connected" + RESET);
+                break;
+            }
+            catch (SQLException sqle)
+            {
+                System.out.println(RED + "Failed to connect to database attempt " + Integer.toString(i) + RESET);
+                System.out.println(sqle.getMessage());
+            }
+            catch (InterruptedException ie)
+            {
+                System.out.println(RED + "Thread interrupted? Should not happen." + RESET);
+            }
+        }
+
+    }
+    //--------------------END Connect to DB------------------------
+    */
